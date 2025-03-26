@@ -10,6 +10,20 @@ This project provides an interactive dashboard for analyzing historical sales da
 - **Feature Importance**: Understand what factors influence sales for each category
 - **What-If Analysis**: Adjust external factors to see how they might impact future sales
 
+## Project Structure
+
+```
+SCOPE/
+├── config/             # Configuration files
+├── scope/              # Core package
+│   ├── utils/          # Utility functions
+│   ├── data/           # Data files
+│   ├── models/         # Trained models
+│   └── visualizations/ # Generated visualizations
+├── scripts/            # Executable scripts
+└── tests/              # Test files
+```
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -20,36 +34,23 @@ This project provides an interactive dashboard for analyzing historical sales da
 ### Installation
 
 1. Clone or download this repository
-2. Navigate to the scripts directory:
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
    ```
-   cd TEST/scripts
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
    ```
-3. Run the dashboard launcher:
+4. Run the dashboard launcher:
+   ```bash
+   python scripts/streamlit_launcher.py
    ```
-   python3 streamlit_launcher.py
-   ```
-   
+
 The launcher will:
-- Create a virtual environment in the `TEST/venv` directory
-- Install required dependencies in the virtual environment
 - Set up the dashboard configuration
 - Launch the Streamlit dashboard in your web browser
-
-### Using an Existing Virtual Environment
-
-If you prefer to manage your own virtual environment:
-
-```bash
-# Create and activate a virtual environment
-python3 -m venv ./venv
-source ./venv/bin/activate  # On Windows, use: venv\Scripts\activate
-
-# Install requirements
-pip install -r config/requirements.txt
-
-# Run the dashboard
-python3 scripts/streamlit_launcher.py
-```
 
 ## Dashboard Tabs
 
@@ -93,22 +94,17 @@ The models consider:
 - Hunting seasons and holidays
 - Sales promotions
 
-## Project Structure
+## Development
 
-- `config/`: Configuration files and requirements
-- `data/`: Contains sales transaction data and external factors
-- `models/`: Trained prediction models
-- `notebooks/`: Jupyter notebooks for data exploration
-- `scripts/`: Dashboard and launcher scripts
-- `visualizations/`: Charts and visualizations
+To contribute to the project:
 
-### Key Files
-- `scripts/sales_prediction_model.py`: Model training script
-- `scripts/streamlit_dashboard.py`: Interactive dashboard code
-- `scripts/streamlit_launcher.py`: Setup and launcher for the dashboard
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
 
 ## Troubleshooting
 
 - If the dashboard doesn't launch automatically, navigate to http://localhost:8501 in your web browser
 - If you encounter any issues with missing data or models, check the console output for error messages
-- Make sure your directory structure matches the expected layout (see Project Structure)
