@@ -20,18 +20,22 @@ build/
 # macOS
 .DS_Store
 
-# Local environment variables
+# Environment variables
 .env
+.env.*
 
 # Logs
 *.log
-
-# Large data files (if necessary)
-# *.csv
-# *.xlsx
 
 # IDE specific files
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# Streamlit
+.streamlit/
+
+# Large data files (optional - uncomment if needed)
+# scope/data/*.csv
+# scope/models/*.pkl
